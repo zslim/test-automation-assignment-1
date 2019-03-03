@@ -17,7 +17,7 @@ public class User {
         this.baseURL = baseURL;
     }
 
-    private void navigateToPageUnderTesting() {
+    private void navigateToSimpleFormDemo() {
         driver.get(baseURL);
         WebElement inputFormsToggle = driver.findElement(By.linkText("Input Forms"));
         inputFormsToggle.click();
@@ -26,7 +26,7 @@ public class User {
     }
 
     public String useSingleFieldButton(String message) {
-        navigateToPageUnderTesting();
+        navigateToSimpleFormDemo();
 
         WebElement inputField = driver.findElement(By.cssSelector("#user-message"));
         inputField.sendKeys(message);
@@ -38,5 +38,23 @@ public class User {
         String messageWeGet = messageSpan.getText();
 
         return messageWeGet;
+    }
+
+    public String useSumFields(String a, String b) {
+        navigateToSimpleFormDemo();
+
+        WebElement inputA = driver.findElement(By.cssSelector("#sum1"));
+        inputA.sendKeys(a);
+
+        WebElement inputB = driver.findElement(By.cssSelector("#sum2"));
+        inputB.sendKeys(b);
+
+        WebElement totalButton = driver.findElement(By.xpath("//button[text()=\"Get Total\"]"));
+        totalButton.click();
+
+        WebElement totalSpan = driver.findElement(By.cssSelector("#displayvalue"));
+        String result = totalSpan.getText();
+
+        return result;
     }
 }
