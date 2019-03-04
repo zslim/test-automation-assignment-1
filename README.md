@@ -23,3 +23,13 @@ My first assignment with Selenium
 * In "Two Input Fields" enter value A and B and click the "Get Total" button.
 * Validate that the answer is correct.
 * Does your test work with even very large numbers?
+
+4. Checkbox
+* Navigate to Checkbox Demo.
+* In "Single Checkbox Demo" check the checkbox and validate the message.
+* Bonus if you write a test for "Multiple Checkbox Demo" and find the bug that is present on the webpage.
+
+5. Select list
+* Navigate to Select Dropdown List.
+* In "Select List Demo" select the current day from the dropdown and validate that it's selected.
+* Try out all the ways you can select a day.
